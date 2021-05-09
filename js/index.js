@@ -24,6 +24,7 @@ function main(ctime) {
 }
 
 const isCollide = (snakeArr) => {
+    // If you bump into yourself
     return false;
 }
 
