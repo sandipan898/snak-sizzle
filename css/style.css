@@ -25,12 +25,18 @@
 
 .head {
     background-color: red;
+    /* height: 20px;
+    width: 20px; */
 }
 
 .food{
     background-color: purple;
+    /* height: 20px;
+    width: 20px; */
 }
 
 .snake{
     background-color: purple;
+    /* height: 20px;
+    width: 20px; */
 }
