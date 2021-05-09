@@ -18,25 +18,19 @@
      width: 90vmin;
      height: 92vmin;
      border: 2px solid blue;
-     display: flex;
+     display: grid;
      grid-template-rows: repeat(18, 1fr);
      grid-template-columns: repeat(18, 1fr);
 }
 
 .head {
     background-color: red;
-    /* height: 20px;
-    width: 20px; */
 }
 
 .food{
     background-color: purple;
-    /* height: 20px;
-    width: 20px; */
 }
 
 .snake{
-    background-color: purple;
-    /* height: 20px;
-    width: 20px; */
+    background-color: #0e3514;
 }
