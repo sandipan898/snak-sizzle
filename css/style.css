@@ -23,11 +23,11 @@
      grid-template-columns: repeat(18, 1fr);
 }
 
-.head p {
-    background-color: red;;
+.head {
+    background-color: red;
 }
 
-.footer{
+.food{
     background-color: purple;
 }
 
