@@ -48,6 +48,7 @@ const gameEngine = () => {
         snakeArr = [{x: 13, y: 15}];
         // musicSound.play();
         score = 0;
+        scoreBox.innerHTML = "Score: " + score;
     }
 
     // If you have eaten the food, increment the score and regenerate the food
@@ -105,6 +106,17 @@ const gameEngine = () => {
 } 
 
 // Main Logic starts from here
+
+// Retrieving high score
+let highScore = localStorage.getItem('highScore');
+if(highScore === null) {
+    highScoreVal = 0;
+    localStorage.setItem("highScore", JSON.stringify(highScoreVal));
+} else {
+    highScoreVal = JSON.parse(highScore);
+    highScoreBox.innerHTML = "Highest Score: " + highScoreVal;
+}
+
 window.requestAnimationFrame(main);
 window.addEventListener('keydown', e => {
     inputDir = {x: 0, y: 0} // start the game
