@@ -31,7 +31,7 @@ const isCollide = (snake) => {
         }
     }
     // Is you bump into the wall
-    if(snake[0].x >= 18 || snake[0].x <= 0 && snake[0].y >= 18 || snake[0].y <= 0) {
+    if(snake[0].x >= 18 || snake[0].x <= 0 || snake[0].y >= 18 || snake[0].y <= 0) {
         return true;
     }
     return false;
@@ -39,13 +39,14 @@ const isCollide = (snake) => {
 
 const gameEngine = () => {
     // Part 1: Updating the Snake array and Food
+    // musicSound.play();
     if(isCollide(snakeArr)) {
         gameOverSound.play();
         musicSound.pause();
         inputDir = {x: 0, y: 0};
         alert("Game Over! Press any key to play again!");
         snakeArr = [{x: 13, y: 15}];
-        musicSound.play();
+        // musicSound.play();
         score = 0;
     }
 
