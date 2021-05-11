@@ -4,8 +4,8 @@ const foodSound = new Audio('music/food.mp3');
 const gameOverSound = new Audio('music/gameover.mp3');
 const moveSound = new Audio('music/move.mp3');
 const musicSound = new Audio('music/music.mp3');
-const speed = 7;
 let score = 0;
+let speed = 7;
 let lastPaintTime = 0;
 let snakeArr = [
     {x: 13, y: 15}
@@ -16,6 +16,8 @@ let food = {x: 6, y: 7};
 function main(ctime) {
     window.requestAnimationFrame(main);
     // console.log(ctime)
+    speed = 7 + score /6;
+    console.log(speed)
     if((ctime - lastPaintTime)/1000 < 1/speed){
         return;
     }
@@ -117,34 +119,60 @@ if(highScore === null) {
     highScoreBox.innerHTML = "Highest Score: " + highScoreVal;
 }
 
-window.requestAnimationFrame(main);
-window.addEventListener('keydown', e => {
-    inputDir = {x: 0, y: 0} // start the game
-    moveSound.play();
-    switch (e.key) {
-        case "ArrowUp": 
-            console.log("ArrowUp");
-            inputDir.x = 0;
-            inputDir.y = -1;
-            break;
+const arrowUpBtn = () => {
+    console.log("ArrowUp");
+    inputDir.x = 0;
+    inputDir.y = -1;
+};
 
-        case "ArrowDown": 
-            console.log("ArrowDown");
-            inputDir.x = 0;
-            inputDir.y = 1;
-            break;
-        
-        case "ArrowLeft": 
-            console.log("ArrowLeft");
-            inputDir.x = -1;
-            inputDir.y = 0;
-            break;
+const arrowLeftBtn = () => {
+    console.log("ArrowLeft");
+    inputDir.x = -1;
+    inputDir.y = 0;
+};
 
-        case "ArrowRight": 
-            console.log("ArrowRight");
-            inputDir.x = 1;
-            inputDir.y = 0;
-            break;
+const arrowRightBtn = () => {
+    console.log("ArrowRight");
+    inputDir.x = 1;
+    inputDir.y = 0;
+};
 
-    }
-})
+const arrowDownBtn = () => {
+    console.log("ArrowDown");
+    inputDir.x = 0;
+    inputDir.y = 1;
+};
+
+const startGame = () => {
+    startBtn.style.display = "none";
+    window.requestAnimationFrame(main);
+    window.addEventListener('keydown', e => {
+        inputDir = {x: 0, y: 0} // start the game
+        moveSound.play();
+        switch (e.key) {
+            case "ArrowUp": 
+                console.log("ArrowUp");
+                inputDir.x = 0;
+                inputDir.y = -1;
+                break;
+
+            case "ArrowDown": 
+                console.log("ArrowDown");
+                inputDir.x = 0;
+                inputDir.y = 1;
+                break;
+            
+            case "ArrowLeft": 
+                console.log("ArrowLeft");
+                inputDir.x = -1;
+                inputDir.y = 0;
+                break;
+
+            case "ArrowRight": 
+                console.log("ArrowRight");
+                inputDir.x = 1;
+                inputDir.y = 0;
+                break;
+        }
+    })
+};
