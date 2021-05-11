@@ -41,3 +41,19 @@
     border: .25vmin solid white;
     border-radius: 8px;
 }
+
+#scoreBox {
+    position: absolute;
+    top: 9px;
+    right: 200px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#highScoreBox{
+    position: absolute;
+    top: 35px;
+    right: 200px;
+    font-size: 30px;
+    font-weight: bold;
+}
